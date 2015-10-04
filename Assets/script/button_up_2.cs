@@ -21,7 +21,7 @@ public class button_up_2 : MonoBehaviour
         
 
         
-        player.rigidbody2D.velocity = new Vector2(-1, player.rigidbody2D.velocity.y);
+        player.GetComponent<Rigidbody2D>().velocity = new Vector2(-1, player.GetComponent<Rigidbody2D>().velocity.y);
         
     
     }

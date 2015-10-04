@@ -14,7 +14,7 @@ public class Generator : MonoBehaviour {
     public void ItemsGenerate(int yItems)
     {
         int RItems = MyRand(items.Length);
-        if (items[RItems] == velositu && player.rigidbody2D.velocity.y<15)
+        if (items[RItems] == velositu && player.GetComponent<Rigidbody2D>().velocity.y<15)
         {
             Instantiate(items[RItems], new Vector3(MyRand((int)player.transform.position.x - 3, (int)player.transform.position.x + 3), yItems + MyRand(10), transform.position.z), Quaternion.identity);
             return;

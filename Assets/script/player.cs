@@ -75,7 +75,7 @@ public class player : MonoBehaviour {
             //    rigidbody2D.velocity = new Vector2(VelosityY, VelosityY);//передаём скорость по осям
             //    transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, - deltaAngl * 12), Time.time );
             //}
-            rigidbody2D.velocity = new Vector2(VelosityX, VelosityY);
+            GetComponent<Rigidbody2D>().velocity = new Vector2(VelosityX, VelosityY);
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, -deltaAngl * 12), Time.time * 10);
         }
         
@@ -127,7 +127,7 @@ public class player : MonoBehaviour {
     {
         VelosityX = 0;
         VelosityY = 0;
-        rigidbody2D.velocity = new Vector2(0, 0); //тормозим 
+        GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0); //тормозим 
         finishImage.SetActive(true);
         textFinish.text = string.Format("Ваш результат - {0:.#}", transform.position.y - 6.15);
         print("Finish");
